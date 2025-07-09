@@ -1,0 +1,160 @@
+:root {
+  --brand-primary: #ff6f00;
+  --brand-secondary: #00897b;
+  --brand-accent: #3949ab;
+  --bs-border-radius-lg: 0.75rem;   /* rounder cards */
+  --bs-box-shadow-sm: 0 0.25rem 0.5rem rgba(0,0,0,.05);
+}
+
+/* Dark‑mode overrides (Bootstrap uses data‑bs‑theme attr) */
+[data-bs-theme="dark"] {
+  --brand-primary: #ffb74d;
+  --brand-secondary: #26c6da;
+  --brand-accent: #9fa8da;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* ------------------------------------------------------------
+   Typography & Utilities
+   ------------------------------------------------------------ */
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  word-spacing: 0.02rem;
+}
+
+h1, .h1 { font-weight: 600; }
+h2, .h2 { font-weight: 500; }
+
+.text-accent   { color: var(--brand-accent) !important; }
+.text-primary  { color: var(--brand-primary) !important; }
+.text-secondary{ color: var(--brand-secondary) !important; }
+
+/* ------------------------------------------------------------
+   Navbar
+   ------------------------------------------------------------ */
+#header {
+  transition: background-color 0.3s ease;
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+#header .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--brand-primary) !important;
+}
+
+#header .nav-link {
+  color: inherit !important;
+  transition: color 0.2s ease;
+}
+#header .nav-link.active {
+  color: var(--brand-accent) !important;
+  font-weight: 600;
+}
+
+.theme-toggle.switch {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------
+   Hero section (landing)
+   ------------------------------------------------------------ */
+.hero {
+  padding: 5rem 1rem 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+  color: #fff;
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.hero .btn-primary {
+  background-color: #fff;
+  color: var(--brand-primary);
+  border: none;
+  font-weight: 600;
+}
+.hero .btn-primary:hover { color: var(--brand-accent); }
+
+/* ------------------------------------------------------------
+   Metrics cards
+   ------------------------------------------------------------ */
+.metric-card {
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: var(--bs-border-radius-lg);
+  padding: 1.25rem 1rem;
+  box-shadow: var(--bs-box-shadow-sm);
+  text-align: center;
+}
+[data-bs-theme="dark"] .metric-card {
+  background-color: #1e1e1e;
+  border-color: rgba(255,255,255,.08);
+}
+
+/* ------------------------------------------------------------
+   Option Pricer page
+   ------------------------------------------------------------ */
+.page-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+#option_price_header {
+  font-size: 1.65rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* input sidebar */
+.option-inputs {
+  width: 300px;
+  gap: 0.75rem;
+}
+
+/* Responsive stacking below lg breakpoint */
+@media (max-width: 991.98px) {
+  .option-layout {
+    flex-direction: column;
+  }
+  .option-results {
+    width: 100% !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   Placeholder styling (existing)
+   ------------------------------------------------------------ */
+#op_ticker_input::placeholder,
+#op_strike_input::placeholder {
+  color: #888;
+  opacity: 0.4;
+}
+
+/* ------------------------------------------------------------
+   Graph containers
+   ------------------------------------------------------------ */
+.dash-graph {
+  box-shadow: var(--bs-box-shadow-sm);
+  border-radius: var(--bs-border-radius-lg);
+  background-color: #fff;
+}
+[data-bs-theme="dark"] .dash-graph {
+  background-color: #1e1e1e;
+}
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+[data-bs-theme="dark"] .site-footer { color: #aaa; }
