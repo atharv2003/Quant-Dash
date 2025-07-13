@@ -55,6 +55,8 @@ This application allows users to:
 3. **Run the app:**
    ```bash
    python app.py
+
+   p.s. There is a slight bug... so when you run the app.py just click on the link twice to open the dashboard.😁
    ```
 
 4. **Open your browser and go to:**
